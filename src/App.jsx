@@ -12,19 +12,30 @@ const imagensIniciais = [
 
 function App() {
   const [imagens, setImagens] = useState(imagensIniciais);
+  const [filtro, setFiltro] = useState('');
 
   const adicionarImagem = (novaImagem) => {
     setImagens([...imagens, novaImagem]);
   }
 
+  const imagensFiltradas = imagens.filter(img =>
+    img.title.toLowerCase().includes(filtro.toLowerCase())
+  );
+
   return (
     <>
       <Header />
       <main>
-        <h2>Bem-vindo ao React!</h2>
+        <h2>Bem-vindo!</h2>
         <section id="imagem">
-          <h2>Galeria de imagens</h2>
-          {imagens.map((img, i) => (
+          <h3>Galeria de imagens</h3>
+          <input
+            type="text"
+            placeholder="Filtrar por título:"
+            value={filtro}
+            onChange={e => setFiltro(e.target.value)}
+          />
+          {imagensFiltradas.map((img, i) => (
             <CardImagem
               key={i}
               title={img.title} 

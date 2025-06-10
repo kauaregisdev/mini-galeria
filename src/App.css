@@ -44,18 +44,21 @@ button:focus-visible {
   margin: 0.5rem;
 }
 
-.adicionar-imagem-container form input {
+.adicionar-imagem-container form input,
+#imagem input {
   padding: 0.5rem;
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-.adicionar-imagem-container form input::placeholder {
+.adicionar-imagem-container form input::placeholder,
+#imagem input::placeholder {
   transition: font-size 0.2s;
 }
 
-.adicionar-imagem-container form input:focus::placeholder {
+.adicionar-imagem-container form input:focus::placeholder,
+#imagem input:focus::placeholder {
   font-size: 0.8rem;
 }
 
