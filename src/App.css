@@ -32,18 +32,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.todolist-container {
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-.todolist-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.adicionar-imagem-container, .todolist-container {
+.adicionar-imagem-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,44 +40,25 @@ button:focus-visible {
 }
 
 .adicionar-imagem-container form input,
-.adicionar-imagem-container form button,
-.todolist-container form input,
-.todolist-container form button {
+.adicionar-imagem-container form button {
   margin: 0.5rem;
 }
 
 .adicionar-imagem-container form input,
-.todolist-container form input[type="text"],
-#imagens input,
-#tarefas input[type="text"] {
+#imagens input {
   padding: 0.5rem;
   width: 300px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-#tarefas input[type="text"] {
-  margin-top: 10px;
-}
-
-#tarefas {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
 .adicionar-imagem-container form input::placeholder,
-.todolist-container form input::placeholder,
-#imagens input::placeholder,
-#tarefas input::placeholder {
+#imagens input::placeholder {
   transition: font-size 0.2s;
 }
 
 .adicionar-imagem-container form input:focus::placeholder,
-.todolist-container form input:focus::placeholder,
-#imagens input:focus::placeholder,
-#tarefas input:focus::placeholder {
+#imagens input:focus::placeholder {
   font-size: 0.8rem;
 }
 
@@ -102,13 +72,6 @@ button:focus-visible {
 .card-imagem-container img {
   width: 100%;
   border-radius: 4px;
-}
-
-.card-tarefa-container {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 8px;
 }
 
 header {

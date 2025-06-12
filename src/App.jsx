@@ -12,31 +12,16 @@ const imagensIniciais = [
   { title: 'Montanha', url: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca', desc: 'Montanha cobertas de neve.' }
 ];
 
-const tarefasIniciais = [
-  { title: 'Estudar React', done: false },
-  { title: 'Fazer compras', done: true }
-];
-
 function App() {
   const [imagens, setImagens] = useState(imagensIniciais);
-  const [tarefas, setTarefas] = useState(tarefasIniciais);
   const [filtroImagem, setFiltroImagem] = useState('');
-  const [filtroTarefa, setFiltroTarefa] = useState('');
 
   const adicionarImagem = (novaImagem) => {
     setImagens([...imagens, novaImagem]);
   };
 
-  const adicionarTarefa = (novaTarefa) => {
-    setTarefas([...tarefas, novaTarefa]);
-  };
-
   const imagensFiltradas = imagens.filter(img =>
     img.title.toLowerCase().includes(filtroImagem.toLowerCase())
-  );
-
-  const tarefasFiltradas = tarefas.filter(tarefa =>
-    tarefa.title.toLowerCase().includes(filtroTarefa.toLowerCase())
   );
 
   return (
@@ -62,25 +47,6 @@ function App() {
           ))}
           <FormImagem 
             onAdicionar={adicionarImagem}
-          />
-        </section>
-        <section id="tarefas">
-          <h2>Lista de tarefas</h2>
-          <input
-            type="text"
-            placeholder="Filtrar por título:"
-            value={filtroTarefa}
-            onChange={e => setFiltroTarefa(e.target.value)}
-          />
-          {tarefasFiltradas.map((tarefa, i) => (
-            <CardTarefa
-              key={i}
-              title={tarefa.title}
-              done={tarefa.done ? 'Concluída' : 'Pendente'}
-            />
-          ))}
-          <FormTarefa
-            onAdicionar={adicionarTarefa}
           />
         </section>
       </main>
