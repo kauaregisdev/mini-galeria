@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 function FormImagem({ onAdicionar }) {
-    const [titulo, setTitulo] = useState("");
+    const [title, setTitle] = useState("");
     const [url, setUrl] = useState("");
     const [desc, setDesc] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (!titulo || !url) return;
-        onAdicionar({ title: titulo, url, desc });
-        setTitulo("");
+        if (!title || !url) return;
+        onAdicionar({ title: title, url, desc });
+        setTitle("");
         setUrl("");
         setDesc("");
         alert("Imagem adicionada com sucesso!");
@@ -22,8 +22,8 @@ function FormImagem({ onAdicionar }) {
                 <input
                     type="text"
                     placeholder="Digite o título da sua imagem:"
-                    value={titulo}
-                    onChange={(e) => setTitulo(e.target.value)}
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
                     required
                 />
                 <input
